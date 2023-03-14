@@ -16,7 +16,6 @@ export const userReducer = (
 ): InitialStateType => {
   switch (action.type) {
     case GET_USERS:
-      // @ts-ignore
       return { ...state, users: action.users };
     case LOADING:
       return { ...state, isLoading: action.isLoading };
