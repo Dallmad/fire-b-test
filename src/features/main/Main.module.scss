@@ -8,6 +8,10 @@
   @media screen and (max-width: 920px) {
     width: 95vw;
   }
+  @media screen and (max-width: 680px) {
+    padding-top: 20px;
+    height: 100%;
+  }
 
   &_loading {
     position: absolute;
@@ -15,10 +19,6 @@
     left: 50%;
     transform: translate(-50%, 0);
     margin-top: 5px;
-  }
-
-  &_box {
-    border: 1px solid $borderColor;
   }
 
   &_error {

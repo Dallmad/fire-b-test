@@ -18,6 +18,3 @@ export const useTypedDispatch = () => useDispatch<TypedDispatch>();
 export type AppRootStateType = ReturnType<typeof rootReducer>;
 export type AppActionType = UserActionsType;
 export type TypedDispatch = ThunkDispatch<AppRootStateType, any, AppActionType>;
-
-// @ts-ignore
-window.store = store;

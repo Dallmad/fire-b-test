@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 
 import close from '../../../assets/png/close.png';
-// import remove from '../../../assets/png/delete.png';
 
 import style from './User.module.scss';
 import { UserPropsType } from './UserPropsType';
 
 import { ReturnComponentType } from 'common';
 import { Modal } from 'components';
-import { DataModal } from 'enums';
+import { DataHeader, DataModal } from 'enums';
 import { deleteUser, useTypedDispatch } from 'state';
 
 export const User = ({ user, search }: UserPropsType): ReturnComponentType => {
@@ -50,24 +49,31 @@ export const User = ({ user, search }: UserPropsType): ReturnComponentType => {
 
   return (
     <div className={style.user}>
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
       <img
         src={close}
         onClick={onClickDelete}
         alt="remove"
         className={style.user_remove}
       />
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div onClick={openModal} className={style.user_content}>
-        <div className={style.user_content_info}>{formatString(user.name)}</div>
-        <div className={style.user_content_info}>{formatString(user.username)}</div>
-        <div className={style.user_content_info}>{formatString(user.email)}</div>
+        <div className={style.user_content_info}>
+          <span className={style.user_content_title}>{DataHeader.NAME}: </span>
+          {formatString(user.name)}
+        </div>
+        <div className={style.user_content_info}>
+          <span className={style.user_content_title}>{DataHeader.USER_NAME}: </span>
+          {formatString(user.username)}
+        </div>
+        <div className={style.user_content_info}>
+          <span className={style.user_content_title}>{DataHeader.EMAIL}: </span>
+          {formatString(user.email)}
+        </div>
       </div>
 
       <div>
         <Modal closeModal={closeModal} showModal={showModal}>
           <div className={style.modal}>
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
             <img
               src={close}
               onClick={closeModal}

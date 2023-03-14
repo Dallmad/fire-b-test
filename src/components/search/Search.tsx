@@ -3,6 +3,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import style from './Search.module.scss';
 
 import { ReturnComponentType } from 'common';
+import { DataSearch } from 'enums';
 import { useDebounce } from 'hooks';
 import { fetchUsers, searchUser, useTypedDispatch } from 'state';
 
@@ -31,9 +32,10 @@ export const Search = (): ReturnComponentType => {
         onChange={e => onChangeSearch(e)}
         value={value}
         className={style.search_input}
+        placeholder={DataSearch.SEARCH}
       />
       <button type="button" onClick={onClickReset} className={style.search_reset}>
-        Reset
+        {DataSearch.RESET}
       </button>
     </div>
   );

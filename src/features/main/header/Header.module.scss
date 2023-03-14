@@ -6,6 +6,10 @@
   max-width: 100%;
   margin-left: 25px;
 
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
+
   &_title {
     color: $textColor;
     min-width: 200px;

@@ -38,7 +38,7 @@ export const Main = (): ReturnComponentType => {
       {isLoading && <div className={style.main_loading}>Loading...</div>}
 
       <Header />
-      <div className={style.main_box}>{checkSearch} </div>
+      {checkSearch}
       <Search />
       {error && <div className={style.main_error}>{error}</div>}
     </div>

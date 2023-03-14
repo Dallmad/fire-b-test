@@ -103,6 +103,11 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-unused-vars': ['error'],
+    'jsx-a11y/no-noninteractive-element-interactions': [
+      'error',
+      { handlers: ['onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp'] },
+    ],
+    'jsx-a11y/click-events-have-key-events': ['warn'],
   },
   settings: {
     'import/resolver': {
