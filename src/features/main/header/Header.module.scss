@@ -1,0 +1,13 @@
+@import 'src/common/styles/mixins';
+@import 'src/common/styles/variables';
+
+.header {
+  @include flex(row, space-between, center);
+  max-width: 100%;
+  margin-left: 25px;
+
+  &_title {
+    color: $textColor;
+    min-width: 200px;
+  }
+}

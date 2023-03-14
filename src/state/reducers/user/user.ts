@@ -1,6 +1,13 @@
 import { InitialStateType, UserActionsType } from './types';
 
-import { GET_USERS, initialState, LOADING, SET_ERROR } from 'constants/index';
+import {
+  DELETE_USER,
+  GET_USERS,
+  initialState,
+  LOADING,
+  SEARCH_USER,
+  SET_ERROR,
+} from 'constants/index';
 
 export const userReducer = (
   // eslint-disable-next-line default-param-last
@@ -15,6 +22,13 @@ export const userReducer = (
       return { ...state, isLoading: action.isLoading };
     case SET_ERROR:
       return { ...state, error: action.error };
+    case DELETE_USER:
+      return {
+        ...state,
+        users: state.users.filter(({ id }) => id !== action.id),
+      };
+    case SEARCH_USER:
+      return { ...state, search: action.value };
     default:
       return state;
   }

@@ -1,0 +1,28 @@
+@import 'src/common/styles/mixins';
+@import 'src/common/styles/variables';
+
+.main {
+  width: 70vw;
+  height: 100vh;
+
+  @media screen and (max-width: 920px) {
+    width: 95vw;
+  }
+
+  &_loading {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 5px;
+  }
+
+  &_box {
+    border: 1px solid $borderColor;
+  }
+
+  &_error {
+    text-align: center;
+    color: $backgroundColorError;
+  }
+}
